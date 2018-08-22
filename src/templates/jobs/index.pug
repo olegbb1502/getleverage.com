@@ -1,0 +1,68 @@
+extends ../layout.pug
+include ../mixins/header/index.pug
+include ../mixins/footer/index.pug
+
+block title
+  title Leverage | Jobs
+
+block content
+
+  body.jobs
+    .Intro
+      .Overlay
+      h1 Join Our Team
+      small Work on what you want,<br/>when you want.
+      div.button #[a(href="http://workforleverage.com") Apply Now]
+
+    .VideoContainer
+      h3 Join a team of go-getters committed to quality and efficiency.
+      .VideoWrapperWrapper
+        .VideoWrapper
+          iframe#video(src="https://www.youtube.com/embed/b0cPw_hq-EY?enablejsapi=1&controls=0&rel=0&showinfo=0&origin=https://getleverage.com", allowfullscreen, frameborder=0)
+          #youtube-play
+            .triangle
+
+      div.button #[a(href="http://workforleverage.com") Apply Now]
+
+    .Content
+      h5 No matter who you are, you’re limited to 24 hours in the day.
+      p What’s different about the trailblazers, the game-changers, the paradigm-shifters — they’re high-efficiency people. The kind of people who accomplish more in a day than most accomplish in a week. These are the type of people in our client community - but equally, on our team.
+      blockquote What’s different about the trailblazers, the game-changers, the paradigm-shifters — they’re high-efficiency people.
+      p Ours is a business of innovation in time and resource management. A company where efficiency is more than our unique talent—it’s what drives us, keeps us curious and is our catalyst for continual improvement.
+      p We are trained by the best and that gives us an edge—we are a team of tech-loving, client-centric, task-hungry professionals committed to lean-in, learn fast, and constantly seek long-term solutions, not short-term fixes. We’re unique individuals coming together to form a global, virtual community with different talents and time-zones.
+      p #[strong We succeed] because we take pride-in—and ownership-of—everything we do. That builds our clients’ trust. #[strong We win] because we don’t simply “do”—we learn new ways, challenge convention and push expectations.
+      p The framework of the Leverage Project Managers is to optimize, automate, and outsource everything in your life and we are offering a unique opportunity to work with some of the top entrepreneurs around to support them in the work they are doing.
+      p We are a new way of getting things #[strong DONE].
+      div.button #[a(href="http://workforleverage.com") Apply Now]
+
+    .Bullets
+      h2 We at Leverage
+      ul.bulletlist
+        li Use time effectively
+        li Love what we do
+        li Get uncomfortable
+        li Learn from every experience
+        li Seek long term solutions
+        li Act autonomously
+        li Commit to our teammates
+        li Never settle
+        li Seek awe
+
+    .Content
+      h2 What You’ll Get
+
+      h4 Hands-on training
+      p Training from industry leaders in the methods of Leverage, how to manage projects, provide top level client service, and tackle any project you are asked to complete.
+
+      h4 Learn from the most efficient people in the industry
+      p Access to constant training and support from Nick as well as the other project managers in a collaborative environment where tasks and projects are discussed and best practices are determined.
+
+      h4 Groundbreaking Impact
+      p The opportunity to support and facilitate groundbreaking and world changing work.
+
+      h4 Flexible, autonomous schedule with great pay
+      p A flexible work schedule that starts at $20/hr (for Generalists) with opportunities to advance. A bonus structure unlike any other in the industry, typically 8 VAs will get a weekly bonus of 40% of their pay that week. Work when and where you want, though we recommend a minimum of 15 hours per week.
+
+      div.button #[a(href="http://workforleverage.com") Apply Now]
+
+    + Footer()

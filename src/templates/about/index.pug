@@ -1,0 +1,26 @@
+extends ../layout.pug
+include ../mixins/header/index.pug
+include ../mixins/footer/index.pug
+include ../mixins/featured/index.pug
+
+block title
+  title Leverage | About Us
+
+block content
+  body.about
+
+    +Header()
+
+    section.header
+      h3 About Us
+
+    section.content
+      .introduction
+        h4 Meet Nick
+
+        p A serial entrepreneur with a passion for creating companies that disrupt the way people live. Nick is the co-founder of Leverage and the co-author of the book <a href="https://www.amazon.com/Idea-Execution-Optimize-Outsource-Everything/dp/1619615053/ref=sr_1_1?ie=UTF8&qid=1506444365&sr=8-1&keywords=idea+to+execution">Idea to Execution</a>.
+        p Before making the jump to the startup technology space, Nick spent more than eight years on Wall Street as a high frequency algorithmic trader. His personal mission is to help busy entrepreneurs and executives optimize their lives in a meaningful way and help them go from idea to execution in as few steps as possible.
+        p In addition to his professional interests, Nick is an avid chess player, traveler, and athlete.
+
+    +Featured()
+    +Footer()

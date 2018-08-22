@@ -1,0 +1,97 @@
+#pricing
+  text-align center
+  padding-top 60px
+  background-color $lightgray
+
+  span.value
+    text-transform uppercase
+    font-size 0.75em
+    letter-spacing 0.05em
+    padding 2px 7px
+    line-height 1.5em
+    font-weight bold
+    background-color #f4f4f4
+    border-radius 20px
+    display inline-block
+
+  p.large
+    color $red
+    margin-bottom 50px
+
+  .pricing-monthly
+    background-color white
+    max-width 660px
+    margin 0 auto
+    margin-top 50px
+    padding 30px 30px 50px 30px
+    border-radius 2px
+    box-shadow 0 0 15px #dddddd
+
+    .description
+      a
+        padding-bottom 2px
+        border-bottom 1px solid black
+        transition 0.2s all
+        &:hover
+          color $red
+          border-bottom 1px solid $red
+
+
+    input
+      width 300px
+
+      @media $smartphone
+        margin-top 20px
+        width 100% !important
+
+    .price
+      p
+        font-family $font-display
+        font-size 3.5em
+        display inline-block
+        margin 0
+        margin-top 20px
+      span
+        display inline-block
+        font-family $font-display
+        font-size 1.75em
+        color #aaa
+        position relative
+        top -8px
+        left 3px
+
+    .description
+      h5
+        margin-top 50px
+      p
+        text-align left
+        margin-left 50px
+        line-height 1.75em
+        &:before
+          content ''
+          width 7px
+          height 12px
+          display inline-block
+          border-right 3px solid #000
+          border-bottom 3px solid #000
+          margin-right 30px
+          transform rotate(45deg)
+
+        @media $mobile-devices
+          text-align center
+          margin-left 0px
+          line-height 1.25em
+
+          &:before
+            display none
+
+    button
+      margin-top 20px
+      @media $smartphone
+        margin-top 10px
+        width 100% !important
+
+ .pricing-info
+    padding 20px 0
+    color $gray
+

@@ -1,0 +1,125 @@
+body.affiliates
+  .VideoModule
+    background-image url('/images/affiliates.png')
+    border 5px solid #ec0606
+    position relative
+
+  .VideoWrapperWrapper
+    margin 0 auto
+    max-width 740px
+    width 100%
+
+  .VideoWrapper
+    background-color black
+    border 1px solid white
+    border-radius 3px
+    height 100%
+    padding-bottom 56.25%
+    position relative
+
+    .video
+      height 100%
+      left 0
+      position absolute
+      top 0
+      width 100%
+
+    #youtube-play, #wistia-play
+      background-color white
+      border-radius 50%
+      box-shadow 0 4px 8px 0 rgba(0, 0, 0, 0.16)
+      position absolute
+      top calc(50% - 40px)
+      left calc(50% - 40px)
+      height 80px
+      width 80px
+
+      @media $tablet-up
+        height 110px
+        left calc(50% - 55px)
+        top calc(50% - 55px)
+        width 110px
+
+      &:hover
+        cursor pointer
+
+    .triangle
+      background-color transparent
+      border-style solid
+      border-color transparent
+      border-left-color #ec0606
+      border-radius 2px
+      border-width 17.5px 0 17.5px 27px
+      left 39%
+      position absolute
+      top 29%
+
+      @media $tablet-up
+        border-width 22.5px 0 22.5px 35px
+
+  .MembershipWrapper
+     background-color #f7f7f9
+     border-radius 3px
+     box-shadow 0 2px 14px 0 rgba(0, 0, 0, 0.15)
+     display inline-block
+     left 50%
+     padding 8px 12px
+     position absolute
+     transform translate(-50%, -50%)
+
+     @media $tablet-up
+      padding 16px 24px
+
+  .Membership
+    background-color #ec0606
+    color white
+    display inline-block
+    font-family 'Larsseit Bold'
+    font-size 13px
+    font-weight bold
+    line-height 1
+    padding 11px 14px
+    text-align center
+
+    @media $tablet-up
+      border-radius 3px
+      font-size 16px
+      padding 18px 18px
+
+  .VideoWrapperWrapper
+    padding 32px 0 72px
+
+  h1
+    color #ffffff
+    font-family 'Larsseit Bold'
+    font-size 32px
+    font-weight bold
+    margin 32px 0 0
+    padding 0
+    text-align center
+
+    @media $tablet-up
+      font-size 40px
+
+      br
+        display none
+
+  h4
+    color #ffffff
+    font-family 'Source Sans Pro'
+    font-size 20px
+    line-height 1
+    margin 16px 0 0
+    padding 0
+    text-align center
+
+    @media $tablet-up
+      font-size 24px
+
+  .pricing-cta
+    padding-top 20px
+
+  .deal
+    font-size 18px
+    font-weight 700
+    margin-top 20px

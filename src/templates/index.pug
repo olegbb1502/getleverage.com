@@ -1,0 +1,106 @@
+extends ./layout.pug
+include ./mixins/header/index.pug
+include ./mixins/footer/index.pug
+include ./mixins/featured/index.pug
+include ./mixins/pricing/index.pug
+include ./mixins/skills/index.pug
+
+block title
+  title Virtual Assistant Services | Leverage
+
+block content
+  body.virtual-assistants
+    iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-525N83N" height="0" width="0" style="display:none;visibility:hidden")
+
+    .notice FREE access to Power of Process productivity bundle
+      a(href="https://pages.convertkit.com/3f6775e4c6/46bdf47c22") GET STARTED
+
+    section#intro
+      .tagline
+        a(href="/")
+          img(src="/images/leverage-logo.svg")
+        h1 Your to-do list, done.
+        h2 We're an outsourcing platform that gives you access to a team who can complete any task or project - for life and business.
+        div.relative.newsletter
+          input(type="text", name="email", placeholder="Enter your email address", required)
+          span.error-msg Please enter a valid email address.
+          button.signup.service Sign Up
+
+      .video-wrapper
+        .video
+            iframe(src="//fast.wistia.net/embed/iframe/ye3g1erw1r?videoFoam=true&playerColor=ff0000" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed video" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen)
+
+    +Skills()
+
+    section#inspiration
+      h2 Inspiration
+
+      a(href="http://inspiration.getleverage.com" target="_blank")
+        img(src="/images/leverage-inspiration.jpg" width="900px")
+
+    +Pricing()
+      form
+        input(type="text", name="email", placeholder="Enter your email address", required)
+        span.error-msg Please enter a valid email address.
+        button.signup.service Sign Up
+        .error
+
+    section#customers
+      .header
+        h2 Loved by our customers
+
+        .quote-carousel
+
+          input(type="radio" name="quotes" id="profile-1" checked)
+
+          .profile
+            .previous
+              label(for="profile-3")
+
+            .quote
+              h4 Great if you are true to your aspiration of wanting to create a meaningful (sustainable) business success.
+            .customer
+              img(src="/images/jay-abraham.jpg")
+              .info
+                h5 Jay Abraham
+                h6 World Renowned Business Growth Strategist
+            .next
+              label(for="profile-2")
+
+          input(type="radio" name="quotes" id="profile-2")
+          .profile
+            .previous
+              label(for="profile-1")
+
+            .quote
+              h4 This is a magic wand for creating more in less time.
+
+            .customer
+              img(src="/images/sally-hogshead.jpg")
+              .info
+                h5 Sally Hogshead
+                h6 #1 New York Times Best Selling Author, Fascinate
+
+            .next
+              label(for="profile-3")
+
+          input(type="radio" name="quotes" id="profile-3")
+
+          .profile
+            .previous
+              label(for="profile-2")
+            .quote
+              h4 I'm very impressed with the transparency and insights that Ari and Nick reveal.
+
+            .customer
+              img(src="/images/daymond-john.jpg")
+              .info
+                h5 Daymond John
+                h6 Founder of FUBU and Star of ABC's Shark Tank
+
+            .next
+              label(for="profile-1")
+
+    +Featured()
+
+    +Footer()

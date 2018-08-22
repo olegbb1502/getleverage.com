@@ -1,0 +1,228 @@
+body.jobs
+  h1, h2, h3, h4, h5, h6, p
+    margin 0
+  ul, ol
+    list-style-type none
+
+  h2
+    font-family 'Larsseit Bold', sans-serif
+    font-size 36px
+    text-align center
+
+  iframe
+    border none
+
+  div.button
+    text-align center
+
+    :hover
+      background-color: #ff1a1a
+
+    a
+      background-color #ec0606
+      border-radius 3px
+      color white
+      display inline-block
+      font-family 'Larsseit Bold', sans-serif
+      font-size 17px
+      padding 15px 30px 12px
+      text-align center
+
+  .Intro
+    align-items center
+    background-image url('/images/jobs-hero.jpg')
+    background-position center
+    background-size cover
+    display flex
+    flex-direction column
+    padding 110px 0
+    position relative
+    text-align center
+
+    @media $desktop
+      padding 180px 0
+
+    h1
+      color white
+      font-size 40px
+      font-weight bold
+      line-height 1
+      margin 0 0 8px
+      position relative
+      text-shadow: 0 6px 20px #151515;
+
+      @media $desktop
+        font-size 70px
+
+    small
+      font-size: 20px
+      font-weight: 600
+      color: #ffffff
+      margin-bottom 20px
+      position relative
+      text-shadow: 0 6px 20px #151515
+
+      @media $desktop
+        margin-bottom 32px
+
+    div.button
+      box-shadow: 0 6px 20px 0 #151515;
+      position relative
+
+    .Overlay
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5))
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+
+  .VideoContainer
+    align-items center
+    background-color #f7f7f9
+    display flex
+    flex-direction column
+    border-top 4px solid #ec0606
+    padding 0 10px
+    text-align: center
+
+    h3
+      color black
+      font-family: 'Larsseit Bold', sans-serif
+      font-size: 24px
+      line-height: 1.25
+      margin 37px 0
+      max-width 825px
+
+      @media $desktop
+        font-size 50px
+        margin 64px 0
+
+    .VideoWrapperWrapper
+      max-width 1100px
+      width 100%
+
+    .VideoWrapper
+      height 100%
+      padding-bottom 56.25%
+      position relative
+
+      #video
+        height 100%
+        left 0
+        position absolute
+        top 0
+        width 100%
+
+      #youtube-play
+        background-color white
+        border solid 4px #ec0606
+        border-radius 50%
+        box-shadow 0 12px 30px 0 rgba(0, 0, 0, 0.5)
+        position absolute
+        top calc(50% - 40px)
+        left calc(50% - 40px)
+        height 80px
+        width 80px
+
+        &:hover
+          cursor pointer
+
+        @media $desktop
+          border-width 10px
+          height 180px
+          width 180px
+          top calc(50% - 90px)
+          left calc(50% - 90px)
+
+      .triangle
+        background-color transparent
+        border-style solid
+        border-color transparent
+        border-left-color #ec0606
+        border-width 17.5px 0 17.5px 27px
+        position absolute
+        top 25%
+        left 36%
+
+        @media $desktop
+          width 60px
+          height 79px
+          border-width 39.5px 0 39.5px 60px
+
+    div.button
+      margin 40px 0
+
+  .Content
+    padding 40px 0
+    margin 0 auto
+    max-width 534px
+
+    h4
+      font-size 20px
+      line-height 1.3
+      padding 10px 20px 0
+
+    h5
+      font-family 'Larsseit Bold', sans-serif
+      font-size 20px
+      line-height 1.3
+      padding 0 20px
+
+      @media $desktop
+        font-size 24px
+        line-height 1.25
+
+    p
+      font-size 15px
+      line-height 1.33
+      padding 10px 20px
+
+      @media $desktop
+        font-size 17px
+        line-height 1.25
+
+    blockquote
+      border-left 2px solid #ec0606
+      color #ec0606
+      font-size 24px
+      padding 10px 20px
+
+      @media $desktop
+        font-size 30px
+
+    div.button
+      margin-top 10px
+
+  .Bullets
+    background-color #f7f7f9
+    padding-bottom 40px
+
+    h2
+      padding 40px 0 15px
+
+    ul
+      margin 0 20px
+      max-width 1100px
+
+      @media $desktop
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        margin 0 auto
+
+    li
+      border-radius 4px
+      color #ec0606
+      font-family 'Larsseit Bold', sans-serif
+      font-size 18px
+      line-height 1
+      margin 0 auto 15px
+      padding 14px 0 11px
+      text-align center
+
+      @media $desktop
+        background-color white
+        border dashed 1px #ec0606
+        font-size 22px
+        width 320px

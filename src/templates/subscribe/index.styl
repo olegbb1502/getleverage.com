@@ -1,0 +1,97 @@
+body.subscribe
+  p
+    margin 0px
+
+  #card-errors
+    color #ec0606
+
+  section.subscribe-form
+    width 75%
+    margin 0 auto
+    display block
+
+    .error
+      color #ec0606
+      font-size 14px
+
+    @media $mobile-devices
+      width 90%
+
+    .customer-info,
+    .billing-info
+      margin-bottom 40px
+      p
+        max-width 600px
+
+    .billing-info
+      max-width 600px
+      p
+        margin-bottom 14px
+
+    .form-header
+      max-width 650px
+      padding-bottom 40px
+
+      .logo
+        width 175px
+        margin-top 30px
+        margin-bottom 30px
+
+      h3
+        margin 0px
+        margin-top 45px
+
+    .form-continue
+      padding 20px 0
+
+      label,
+      input
+        display inline-block
+      label
+        padding 0 10px
+
+        a
+          border-bottom 1px solid black
+          padding-bottom 3px
+
+      input
+        width auto
+
+      button
+        display block
+        margin-top 20px
+
+    form
+      .col
+        padding-right 20px
+
+    h4
+      padding 0
+      margin 10px 0
+
+    label
+      font-family $font-display
+      display block
+      font-weight 600
+      color $darkgray
+      margin-top 10px
+    input
+      margin 10px 0px
+      width 100%
+    button
+      min-width 250px
+      margin 0px
+
+  @media $mobile-devices
+
+      section.subscribe-form
+        button
+          width 100%
+          margin-top 0px
+        .col
+          width 100%
+          padding-right 0px
+          .col
+            width 48%
+          .col:first-of-type
+            margin-right 4%

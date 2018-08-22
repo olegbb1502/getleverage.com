@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+'use strict'
+
+const execSync = require('child_process').execSync
+const env = process.env.NODE_ENV || 'development'
+const isProd = env === 'production'
+const isStaging = env === 'staging'
+
+let distributionID, endpoint, branch
+
+if (isProd) {
+  distributionID = 'E3AMR5TUCW6AW2'
+  endpoint = 'getleverage.com'
+  branch = 'production'
+}
+else if (isStaging) {
+  distributionID = 'E36HO8WUEQ2U87'
+  endpoint = 'staging-website.getleverage.com'
+  branch = 'master'
+}
+else {
+  distributionID = 'E2VRPX73AP9HQO'
+  endpoint = 'dev-website.getleverage.com'
+  branch = 'development'
+}
+
+/* Save current branch to restore */
+const currentBranch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).trim()
+
+console.log(`Switching to branch ${branch} for deployment.`)
+
+const options = { stdio: 'inherit' }
+execSync(`git checkout ${branch}`, options)
+execSync('npm run build', options)
+execSync(`aws s3 sync static s3://${endpoint} --delete --profile leverage`, options)
+execSync(`aws cloudfront create-invalidation --distribution-id ${distributionID} --paths '/*' --profile leverage`, options)
+
+console.log(`Switching back to branch ${currentBranch}.`)
+execSync(`git checkout ${currentBranch}`)
+console.log(`Successfully deployed to https://${endpoint}`)

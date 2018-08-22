@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+'use strict'
+
+const pug = require('pug')
+const fs = require('fs')
+const path = require('path')
+
+const mkdirp = require('mkdirp').sync
+const env = require('../env.js')
+
+const config = require('../affiliates/config.js')
+const here = path.resolve('./affiliates')
+const tmpl = pug.compileFile(path.resolve(`${here}/template.pug`))
+
+for (const slug in config) {
+  const name = slug.toLowerCase()
+  const locals = {
+    ...config[slug],
+    ...env,
+  }
+  const content = tmpl(locals)
+  const base = path.resolve(`./src/templates/${name}`)
+
+  mkdirp(base)
+  fs.writeFileSync(`${base}/index.pug`, content)
+}

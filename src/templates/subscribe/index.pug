@@ -1,0 +1,108 @@
+extends ../layout.pug
+
+block title
+  title Leverage | Create Account
+
+block content
+  body.subscribe
+
+    section.subscribe-form
+      .form-header
+        .logo
+          a(href="/")
+            img(src="/images/leverage-logo.svg")
+        h3 Create Account
+        br
+        p You won't be charged until the morning of your Welcome Call with a Leverage coach, at which point we will activate your account and you can start posting tasks.
+
+      form#payment
+        .customer-info
+          h4 Customer Information
+          .errors(id="customer-errors")
+
+          .col
+            label(for="customer-first-name") First Name
+            input(
+              type="text",
+              name="firstName",
+              id="customer-first-name",
+              data-message="A first name is required."
+              maxlength="50")
+            .error(for="customer-first-name")
+          .col
+            label(for="customer-last-name") Last Name
+            input(
+              type="text",
+              name="lastName",
+              id="customer-last-name",
+              data-message="A last name is required."
+              maxlength="50")
+            .error(for="customer-last-name")
+          .col
+            label(for="email-address") Email Address
+            input(
+              type="text",
+              name="email",
+              data-message="An email address is required."
+              id="email-address",
+              maxlength="255")
+            .error(for="email-address")
+          .col
+            label(for="phone") Phone
+            input(
+              type="text",
+              name="phone",
+              data-message="A phone number is required."
+              id="phone",
+              maxlength="30")
+            .error(for="phone")
+          .col
+            label(for="organization") Organization
+            input(
+              type="text",
+              name="organization",
+              id="organization",
+              maxlength="35")
+          .col
+            label(for="referrer") Referrer
+            input(
+              type="text",
+              name="referrer",
+              id="referrer")
+
+        .billing-info
+          h4 Billing Information
+          p All transactions are secure and encrypted.
+          <div id="card"></div>
+          <div id="card-errors" role="alert"></div>
+
+          .form-continue
+            input#terms(type="checkbox", name="terms", data-message="You must accept the terms of use.")
+            label(for="terms") I agree to the 
+              a(href="https://getleverage.com/terms-of-use/") Terms of Use
+            .error(for="terms")
+            button(type="submit") Continue
+
+      script.
+        window.stripe = Stripe("#{stripeKey}");
+        var elements = window.stripe.elements();
+
+        var styles = {
+          base: {
+            color: '#373e46',
+            lineHeight: '30px',
+            fontFamily: '"Larsseit Bold", sans-serif',
+            fontSize: '18px',
+            '::placeholder': {
+              color: '#373e46',
+            }
+          },
+
+          invalid: {
+            color: '#ec0606',
+            iconColor: '#ec0606',
+          }
+        };
+
+        window.card = elements.create("card", { style: styles });
+        window.card.mount("#card");

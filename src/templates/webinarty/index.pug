@@ -1,0 +1,24 @@
+extends ../layout.pug
+include ../mixins/header/index.pug
+include ../mixins/footer/index.pug
+include ../mixins/featured/index.pug
+
+block title
+  title Leverage | Thank You
+
+block content
+  body.thankyou
+  
+    +Header()
+    
+    section
+      h1 Thank You
+    
+    section#content
+      p Thank you for registering for the webinar, make sure to show
+        |  up with your toughest questions on productivity. If you're
+        |  interested in finding out more about the Leverage VA service
+        |  in the mean time, you can book a free&nbsp;
+        a(href="http://www.talktoleverage.com") info call.
+
+    +Footer()

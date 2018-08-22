@@ -1,0 +1,93 @@
+body.press
+  padding-top 100px
+
+  .header
+    text-align center
+
+  .content
+    background-color $lightgray
+    padding 80px 0
+
+    @media $mobile-devices
+      padding 50px 20px
+
+  .press-block
+    max-width 750px
+    margin 0 auto
+    background-color white
+    border-radius 5px
+    position relative
+    margin-bottom 30px
+
+    .press-image
+      width 200px
+      height 200px
+      background-color $gray
+      display inline-block
+      vertical-align top
+      background-size cover
+      background-position center center
+
+      @media $mobile-devices
+        display block
+        margin 0 auto
+
+    .press-content
+      padding 30px
+      display inline-block
+      vertical-align top
+      position absolute
+      top 0
+      right 0
+      left 200px
+      bottom 0
+
+      @media $mobile-devices
+        display block
+        position relative
+        text-align center
+        left 0
+        padding-bottom 50px
+
+      .title
+        font-family $font-light
+        font-weight normal
+        font-size 1.8em
+        line-height 1.6em
+        padding-bottom 4px
+        border-bottom 2px solid $lightgray
+        transition 0.2s
+        &:hover
+          border-bottom 2px solid $gray
+
+      .date
+        position absolute
+        bottom 30px
+        left 30px
+        display block
+        color $gray
+        margin-top 20px
+
+
+      .more
+        position absolute
+        bottom 30px
+        right 30px
+        font-weight bold
+        text-transform uppercase
+        letter-spacing 0.05em
+        font-size 0.85em
+        transition 0.2s
+        color $red
+        &:hover
+          color $black
+
+      .more,
+      .date
+        @media $mobile-devices
+          display block
+          padding 10px
+          position relative
+          bottom 0
+          right 0
+          left 0

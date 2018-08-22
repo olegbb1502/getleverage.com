@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+'use strict'
+
+const http = require('http')
+const handle = require('../src/server')
+
+process.title = 'getleverage.com'
+
+const listener = (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.url} ...`)
+
+  const end = () => {
+    console.log(`${new Date()} ${req.method} ${req.url} ${res.statusCode}`)
+  }
+
+  handle(req, res)
+    .then(end)
+    .catch(err => {
+      console.error(err.message)
+      res.statusCode = err.statusCode || 500
+      res.end(err.stack)
+      end()
+    })
+}
+
+http
+  .createServer(listener)
+  .listen(9090, () => console.log('http://localhost:9090/'))

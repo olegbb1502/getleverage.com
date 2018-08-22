@@ -1,0 +1,51 @@
+extends ../src/templates/layout.pug
+include ../src/templates/mixins/footer/index.pug
+include ../src/templates/mixins/pricing/index.pug
+include ../src/templates/mixins/skills/index.pug
+
+
+block title
+  title Leverage + #{name}
+
+
+block content
+  body.affiliates
+
+    .VideoModule
+
+      .Recommendation
+        h1 Recommended by <br>#{name}
+        h4 #{CTA}
+
+      .VideoWrapperWrapper
+        .VideoWrapper
+
+          if (youtube)
+            - var videoSrc = youtube + "?enablejsapi=1&controls=0&rel=0&showinfo=0&origin=https://getleverage.com"
+
+            iframe#video.video(src=videoSrc, allowfullscreen, frameborder=0)
+            #youtube-play
+              .triangle
+
+          else if (wistia)
+
+            div(class="video controlsVisibleOnLoad=false playbar=false settingsControl=false volumeControl=false smallPlayButton=false playButton=false fullscreenButton=false wistia_embed wistia_async_" + wistia)
+            #wistia-play
+              .triangle
+
+            script.
+              window.wistiaID = "#{wistia}";
+
+      .MembershipWrapper
+        a.Membership(href="/subscribe") Get Started with Leverage
+
+    +Skills()
+    +Pricing()
+      div.pricing-cta
+        a.Membership(href="/subscribe") Get Started with Leverage
+        div.deal #{CTA}
+
+    +Footer()
+
+    script.
+      document.cookie = 'ref=' + encodeURIComponent(JSON.stringify({coupon: "#{coupon}", who: "#{name}"})) + ';max-age=604800;path=/';

@@ -1,0 +1,23 @@
+extends ../../layout.pug
+
+block title
+  title Leverage | Schedule
+
+block content
+  body.subscribe-complete
+
+    section.complete
+      .logo
+        a(href="/")
+          img(src="/images/leverage-logo.svg")
+
+      .finished
+        h3 Thank you!
+        p Please schedule a time below with one of our team members 
+          | to complete your account setup.
+        p Please note that you will not be charged anything until the 
+          | day of your welcome call.
+
+    section.schedule
+      .schedule-wrapper
+        iframe(name="schedule", height="800px" width="100%")
